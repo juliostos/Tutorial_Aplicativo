@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Tutorial </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body>
+  
+  <div id="topo">
+    
+
+    <h1>Tutorial Aplicativo</h1>
+
+  </div>
+
+    <br>
+    
+  
+  <div id="container">
+    <h2>Requisitos</h2>
+    
+
+    <ol>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://firebase.google.com/">Criar conta no firebase</a></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://console.firebase.google.com/u/0/">Criar um projeto no firebase&nbsp;</a></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://nodejs.org/en/">Baixar o node js </a>e instale</p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos">Depois de baixar o node abra o cmd</p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://firebase.google.com/docs/cli?hl=pt-br#windows-npm">Instale o firebase cli</a> com o comando <span style="background-color:#d3d3d3">npm install -g firebase-tools</span></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos">Após instalar o firebase feche e abra novamente o cmd</p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos">Execute o comando firebase login&nbsp; &nbsp;logue em sua conta google</p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://developer.android.com/studio">Android Studio</a></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://flutter.dev/?gclid=Cj0KCQjwyMiTBhDKARIsAAJ-9VsPzHU9kZnHN8EUSS67cHOUuHDC7jiXvWICn1ZrJWR5aAwQFFBKnFsaAj5LEALw_wcB&amp;gclsrc=aw.ds">Flutter</a></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://dart.dev/get-dart">Dart</a></p>
+      </li>
+      <li aria-level="1" dir="ltr">
+      <p id="requisitos"><a href="https://www.alura.com.br/artigos/flutter-como-configurar-o-ambiente-de-desenvolvimento?gclid=Cj0KCQjwyMiTBhDKARIsAAJ-9VuLcg6gVtnBv6nN5GeI5RYR1Rb_y8ICMHNgItvUF9A0-DCSXosC7RcaAr1qEALw_wcB">Configuração</a></p>
+      </li>
+    </ol>
+
+  </div> 
+  <br>
+
+  <div id="container">
+
+    <h2>Crie um projeto flutter no android studio</h2>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Crie a estrutura de p&aacute;gina na pasta lib</strong></span></p>
+
+  <div id="imagens">
+  <p><img alt="" height="358" src="https://lh6.googleusercontent.com/FZ_iIJMmDC2NvfQWerE4J9sSrOOp2jQCQiMUrIgRGKPAb67kyqwEhCXGlqUyAxZPK6NFQtPTtsFf7UI0_Fydxx5rJVXa1UKl4C3Z3fbG4KLdGhsZQuLaTAdROV1rFtRO9Bgf6Xno8moO6yrmfg" width="355" /></p>
+  </div>
+
+  <p></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Abra o pubspec.yaml, na linha de dependences logo abaixo do cupertino_icons&nbsp; adicione as seguintes linhas&nbsp;</strong></span></p>
+
+  <p><br />
+  </p>
+
+  <div id="imagens" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;</strong></span>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;get: ^4.6.1</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;firebase_core: ^1.11.0</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;firebase_auth: ^3.3.5</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;cloud_firestore: ^3.1.6</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;image_picker: ^0.8.4+4</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;firebase_storage: ^10.2.5</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;path_provider: ^2.0.8</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;google_sign_in: ^5.2.1</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;cached_network_image: ^3.2.0</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;google_fonts: ^2.2.0</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;file_picker: ^4.5.1</strong></span></p>
+  </div>
+  <br>
+
+  <div id="imagens">
+  <p><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="425" src="https://lh3.googleusercontent.com/nUmr8U1IBWXtN_IZrodL64MsxsoABUWbvtHq12pQe761jjqR_ekKr60uIdlFNkjYLU6EPZMFr7EF_gf9wtXslUQgb7yDPdJ-hyUyWjQ4Zj9oZCpLT8lqnS2cS5tR5SqoPN128PUHw0_JIMOZMw" width="310" /></strong></span></p>
+  </div>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Aperte o bot&atilde;o Pub get</strong></span></p>
+  
+  <div id="imagens">
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="64" src="https://lh6.googleusercontent.com/GrbawFhw6HNmFXJq9Xjog9KzknuYuVVPLvZXhp3ljEt6YPCGCAUOhY-5GK650GenKSLGbRmDPUgE41D1D_dStNeiWvu-JUqNtOcgf9w_U3Ceyz6zCgEfSyZ1AGZXiY8VdDgb_e8I25oc28Tf7Q" width="602" /></strong></span></p>
+  </div>
+
+  <br>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">No terminal do android studio digite o comando&nbsp;</strong></span></p>
+
+  <div id="imagens" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">dart pub global activate flutterfire_cli</strong></span></div>
+  <br>
+
+  <div id="imagens">
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="221" src="https://lh4.googleusercontent.com/Ao5YnBHs7lIMPO9t52Mjqu3Vb-2jjHjmIMxqvN6s28hBT0YPjHrCqofNL0taAAPqSMHGbSDg0qmKvp-xClL-dW1bmn7oEzJv_x3JfCikQEftnK1Q7agc6iWRYVG2_6gDFWOGK8oBQqucCayR-Q" width="602" /></strong></span></p>
+  </div>
+  
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">ap&oacute;s concluir instala&ccedil;&atilde;o do flutter fire&nbsp;</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">digite o comando&nbsp; </strong></span></p>
+
+  <div id="imagens" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><span style="font-family:Arial,Helvetica,sans-serif">flutterfire configure</span></div>
+
+  <p dir="ltr" style="font-style: italic;"><span style="font-family:Arial,Helvetica,sans-serif">aguarde carregar&nbsp;</span></p>
+
+  <p dir="ltr" style="font-style: italic;"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Ap&oacute;s carregar selecione seu projeto</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">marque as plataformas que ir&aacute; utilizar, clique em enter</strong></span></p>
+ 
+  <div id="imagens">
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="140" src="https://lh3.googleusercontent.com/aQEbtRA8fnAY1cm9AzGZ5gFkNRwoPZv1ItcOH6X0xGOajBvBkK_fT1ajefE_hD7WwZSqJ46xrzc1qBhAQ8xG4fWQ58gCNmF7AdYPrzUnfubPV_Gm_9sXRiZxOj5NSirXhn-B-3qiWXLSKf0HFg" width="602" /></strong></span></p>
+  </div>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">depois de carregar ir&aacute; gerar um arquivo nunca adicione este arquivo no git, pois ele cont&eacute;m informa&ccedil;&otilde;es de acesso do seu servidor.</strong></span></p>
+
+  <p id="imagens"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="30" src="https://lh4.googleusercontent.com/DJ1sHP_qbAKBaZGOZwsjbeHY-adP4ydwklwz466IXSN8aRWkTVV2qyAtapiA0faanYVNB1zOLzUzXO_LqROp4731v4zWh6R3A7bYUN6isHNMiYNcHC4x287AU6QiBFIlDh3kmisemVhfVky9vA" width="171" /></strong></span></p>
+
+    </div>
+
+    <br>
+    
+    <div id="container">
+  <h2><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Configurar O projeto&nbsp;</strong></span></h2>
+
+  <p>&nbsp;</p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Abra o arquivo main.dart&nbsp;</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Delete todo o c&oacute;digo e digite&nbsp;</strong></span></p>
+
+  <div id="imagens">
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  
+  
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">void main() async {</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif">WidgetsFlutterBinding.ensureInitialized();</span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;await Firebase.initializeApp(</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;&nbsp;&nbsp;options: DefaultFirebaseOptions.currentPlatform&nbsp;);</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">&nbsp;&nbsp;runApp(const AppWidget());&nbsp;</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">}</strong></span></p>
+  </div> 
+  </div>  
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Clique em cima dos c&oacute;digo em vermelho e na l&acirc;mpada vermelha, importe o material app, o firebase e o firebase options.</strong></span></p>
+
+  <p id="imagens"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="304" src="https://lh6.googleusercontent.com/RxwlSGKNjzg7_O7AF-HhPxw32J-h6oq5zaL2IbXrlxApCIAd1n9c2UivT0kgrD6qnQgOKq7-k2Thtrc5b_yoWSnCOtnpWomD8df0MiFtEpHNRRHGoJS5iAmcXd1FnlRYjE7fSfo88enaZ21FLw" width="461" /></strong></span></p>
+
+  <p><br />
+  <br />
+  &nbsp;</p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Seu projeto deve ficar assim, s&oacute; um em vermelho.</strong></span></p>
+
+  <p id="imagens"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642"><img alt="" height="232" src="https://lh4.googleusercontent.com/nmK1USNStx2BKcf8Kt-I5-hZ9CxfsJeFpClaU_nS9IwZuKmp26nCshI-AFthi1xZ1sy-mWRheBXkTIapTyyEDn4yz1d2H-u8HJVjnNk9C8YUmVr4Yey81EsCXigBHeTfegMmRw93XZndPvjm-Q" width="490" /></strong></span></p>
+
+  <p>&nbsp;</p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">Agora&nbsp; vamos Criar o AppWidget na pasta widgets cire o arquivo&nbsp;</strong></span></p>
+
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong>app_widget.dart</strong></span></p>
+
+  <div id="imagens" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class AppWidget extends StatelessWidget {
+    const AppWidget({Key? key}) : super(key: key);
+    @override
+    Widget build(BuildContext context) {
+
+      return  GetMaterialApp(
+        title: &quot;Titulo&quot;,
+        theme: ThemeData(
+          primarySwatch: Colors.brown,
+        ),
+        home: HomePage(),
+      );
+    }
+  }</pre>
+  </div>
+
+  <p>Volte at&eacute;&nbsp;o main.dart e importe o AppWidget.</p>
+
+  <div id="imagens">
+  <p>Agora vamos criar a&nbsp;HomePage vamos at&eacute;&nbsp;a pasta page, crie o arquivo home_page.dart</p>
+
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class HomePage extends GetView&lt;HomeController&gt; {
+    const HomePage({Key? key}) : super(key: key);
+
+    @override
+    Widget build(BuildContext context) {
+      String defaultUrl=&quot;https://firebasestorage.googleapis.com/v0/b/allianks-4110a.appspot.com/o/images%2Fconf%2Fno-image.png?alt=media&amp;token=d93c31ed-550e-4e93-92db-2967210e1efa&quot;;
+      return Scaffold(
+          appBar: AppBar(
+            title: const Center(
+              child: Text(&quot;Home&quot;),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () async {
+              ItemModel model = ItemModel();
+              model.price=0.0;
+              model.height=320;
+              model.width=320;
+              model.rating=0;
+              model.filename=defaultUrl;
+              Get.to(EditItenPage(
+                dataForEdit: model,isForEdit: false,
+              ));
+            },
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 0,
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: &quot;Minha conta&quot;),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home_outlined,
+                    color: AppColors.textOnSecondary,
+                  ),
+                  label: &quot;Home&quot;),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite), label: &quot;Favoritos&quot;),
+            ],
+          ),
+          body: const ItensWidget());
+    }
+  }
+  </pre>
+  </div>
+</div>
+  <p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif"><strong id="docs-internal-guid-2c541d76-7fff-e114-da9f-0409563c3642">vamos&nbsp; at&eacute;&nbsp;a pasta controller e crie o home_controller.dart</strong></span></p>
+
+  <br>
+
+  <div id="imagens">
+  <div dir="ltr" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class HomeController extends GetxController with StateMixin&lt;List&lt;HomeController&gt;&gt; {
+    RxBool loading = false.obs;
+    RxString id=&quot;&quot;.obs;
+    RxString imageUrl=&quot;&quot;.obs;
+
+    late final ItemsRepository _repository;
+
+    @override
+    void onInit() async {
+      _repository = ItemsRepository(FirebaseFirestore.instance);
+      super.onInit();
+    }
+
+    Stream&lt;QuerySnapshot&gt; getAllItems() async* {
+
+      yield*  _repository.getIAllItems();
+
+    }
+
+      Future&lt;void&gt; updateItem(ItemModel data,String documentId, {File? file})async{
+      loading.value=true;
+      if(data.filename !=imageUrl.value){
+        await deleteUploadPhoto(url: data.filename!);
+        data.filename=imageUrl.value;
+
+      }
+    await _repository.updateData(documentId, data);
+      loading.value=false;
+      Get.back();
+      }
+    Future&lt;void&gt; delete(String id)async {
+    loading.value=true;
+    _repository.deleteItem(id);
+    loading.value=false;
+
+    }
+  ///seleciona a imagem e deleta se j&aacute; existir
+    Future&lt;void&gt; uploadImage()async{
+      final result = await FilePicker.platform.pickFiles(type: FileType.any, allowMultiple: false);
+      if (result != null &amp;&amp; result.files.isNotEmpty) {
+        final fileBytes =GetPlatform.isWeb? result.files.first.bytes:File(result
+            .files.single.path!);
+      await uploadPhoto(fileBytes!);
+      }
+    }
+  ///deleta foto
+  Future&lt;void&gt;deleteUploadPhoto({required String url})async{
+      FirebaseStorage task = FirebaseStorage.instance;
+    await task.refFromURL(url).delete();
+    }
+
+  ///envia foto para o firebase
+    Future&lt;void&gt;uploadPhoto(dynamic data)async{
+      FirebaseStorage task = FirebaseStorage.instance;
+      int name=DateTime.now().microsecondsSinceEpoch;
+      GetPlatform.isWeb?  await task
+          .ref()
+          .child(&#39;images/itens/${name.toString()}.jpg&#39;)
+          .putData(data): await task
+          .ref()
+          .child(&#39;images/itens/${name.toString()}.jpg&#39;)
+          .putFile(data);
+      
+      String downloadURL = await task
+          .ref(&#39;images/itens/${name.toString()}.jpg&#39;)
+          .getDownloadURL();
+      imageUrl.value=downloadURL;
+    }
+  ///cria um novo item
+    Future&lt;void&gt; newItem({required ItemModel item})async{
+      FirebaseFirestore firestore = FirebaseFirestore.instance;
+      loading.value=true;
+      DocumentReference db=firestore.collection(&quot;products&quot;).doc();
+      await db.set({
+        &quot;title&quot;: item.title,
+        &quot;type&quot;: item.type,
+        &quot;description&quot;: item.description,
+        &quot;filename&quot;: imageUrl.value,
+        &quot;height&quot;: item.height,
+        &quot;width&quot;: item.width,
+        &quot;price&quot;: item.price,
+        &quot;rating&quot;: item.rating,
+        &quot;id&quot;:db.id,
+        &quot;created&quot;: FieldValue.serverTimestamp()
+      });
+      loading.value=false;
+  Get.back();
+    }
+
+  }
+  </pre>
+  </div>
+  </div>
+  <p dir="ltr">na pasta data/model crie o arquivo&nbsp;item_model.dart</p>
+
+  <div id="imagens">
+  <div dir="ltr" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  ItemModel itemModelFromJson(String str) =&gt; ItemModel.fromJson(json.decode(str));
+  String itemModelToJson(ItemModel data) =&gt; json.encode(data.toJson());
+  class ItemModel {
+    ItemModel({
+        this.title, 
+        this.type, 
+        this.description, 
+        this.filename, 
+        this.height, 
+        this.width, 
+        this.price, 
+        this.rating,
+      this.id,
+      this.created
+    });
+
+    ItemModel.fromJson(dynamic json) {
+      title = json[&#39;title&#39;];
+      type = json[&#39;type&#39;];
+      description = json[&#39;description&#39;];
+      filename = json[&#39;filename&#39;];
+      height = json[&#39;height&#39;];
+      width = json[&#39;width&#39;];
+      price = json[&#39;price&#39;];
+      rating = json[&#39;rating&#39;];
+      id = json[&#39;id&#39;];
+      created= json[&#39;created&#39;];
+    }
+    String? title;
+    String? type;
+    String? description;
+    String? filename;
+    int? height;
+    int? width;
+    double? price;
+    int? rating;
+    String? id;
+
+    Timestamp? created;
+
+
+    Map&lt;String, dynamic&gt; toJson() {
+      final map = &lt;String, dynamic&gt;{};
+      map[&#39;title&#39;] = title;
+      map[&#39;type&#39;] = type;
+      map[&#39;description&#39;] = description;
+      map[&#39;filename&#39;] = filename;
+      map[&#39;height&#39;] = height;
+      map[&#39;width&#39;] = width;
+      map[&#39;price&#39;] = price;
+      map[&#39;rating&#39;] = rating;
+      map[&#39;id&#39;] = id;
+      map[&#39;created&#39;] = created;
+
+
+      return map;
+    }
+
+  }</pre>
+  </div>
+  </div>
+
+  <p>v&aacute;&nbsp;at&eacute;&nbsp;a pasta widget e crie o&nbsp;itens_widget.dart</p>
+ 
+  <div id="imagens">
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class ItensWidget extends StatelessWidget {
+    const ItensWidget({Key? key}) : super(key: key);
+
+
+    @override
+    Widget build(BuildContext context) {
+      HomeController controller = Get.find&lt;HomeController&gt;();
+      return StreamBuilder(
+        stream: controller.getAllItems(),
+        builder: (BuildContext context, AsyncSnapshot&lt;QuerySnapshot&gt; snapshot) {
+
+            if (snapshot.hasData) {
+              return SizedBox(
+                width: Get.width,
+                height: Get.height,
+                child: ListView.builder(
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: Get.width * 0.25,
+                                  height: Get.height * 0.14,
+                                  child: Image(
+                                    image: CachedNetworkImageProvider(
+                                      &#39;${snapshot.data?.docs[index].get(&quot;filename&quot;)}&#39;,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                    width: Get.width * 0.65,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              flex: 3,
+                                              child: Text(
+                                                &quot;${snapshot.data!.docs[index].get(&quot;title&quot;)}&quot;,
+                                                style: TextStyles.titleListTile,
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 3,
+                                              child: Text(
+                                                  &quot;${snapshot.data!.docs[index].get(&quot;type&quot;)}&quot;,
+                                                  style: TextStyles.titleRegular),
+                                            ),
+                                            Expanded(
+                                              child: popMenuButtonWidget(ItemModel.
+  &nbsp;                                           fromJson(snapshot.data?.docs[index].data())),
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                              &quot;${snapshot.data!.docs[index].get(&quot;rating&quot;)}&quot;,
+                                              style: TextStyles.titleListTile),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                                children: starRatingWidget(
+                                                    snapshot.data!.docs[index].get(&quot;rating&quot;)??
+                                                        0)),
+                                            Text(
+                                              &quot;R\$:${snapshot.data!.docs[index].get(&quot;price&quot;)}&quot;,
+                                              style: TextStyles.titleRegular,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: Get.height * 0.01,
+                                        ),
+
+                                        
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            } else if (snapshot.hasError) {
+              return Text(&quot;Error:${snapshot.error}&quot;);
+            }
+
+            return const Center(child: CircularProgressIndicator());
+          }
+
+      );
+    }
+  }
+
+  String dateFormate(date) {
+    DateFormat format = DateFormat(&#39;dd/MM/yyyy  HH:mm&#39;);
+    var formate = format.format(date);
+    return formate.toString();
+  }
+  </pre>
+  </div>
+  </div>
+
+  <p>crie o&nbsp;items_provider.dart na pasta provider&nbsp;</p>
+
+  <div id="imagens">
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class ItemsProvider implements IItems {
+  ItemsProvider({required this.firestore});
+    final FirebaseFirestore firestore;
+
+    @override
+    Future&lt;ItemModel&gt; createItem(ItemModel data) {
+      // TODO: implement createItem
+      throw UnimplementedError();
+    }
+
+    @override
+    Future&lt;void&gt; deleteItem(String documentId) async {
+      FirebaseStorage task = FirebaseStorage.instance;
+      DocumentReference ref=firestore.collection(&quot;products&quot;).doc(documentId);
+      DocumentSnapshot data=await ref.get();
+      await task.refFromURL(data.get(&quot;filename&quot;)).delete();
+      await ref.delete();
+    }
+
+    @override
+    Stream&lt;QuerySnapshot&gt; getIAllItems() async*{
+      Stream&lt;QuerySnapshot&gt; data=firestore.collection(&quot;products&quot;).orderBy(&quot;created&quot;,descending: true).snapshots();
+
+    yield* data;
+
+    }
+
+    @override
+    Future&lt;ItemModel&gt; getItemById(String documentId)async {
+      DocumentSnapshot data = await firestore.collection(&quot;products&quot;).
+      doc(documentId).get();
+      return itemModelFromJson(data.toString());  }
+
+    @override
+    Future&lt;void&gt; updateData(String documentId,ItemModel item,)async {
+
+      try{
+        var db=firestore.collection(&quot;products&quot;).doc(documentId);
+        await db.update({
+          &quot;title&quot;: item.title,
+          &quot;type&quot;: item.type,
+          &quot;description&quot;: item.description,
+          &quot;filename&quot;: item.filename,
+          &quot;height&quot;: item.height,
+          &quot;width&quot;: item.width,
+          &quot;price&quot;: item.price,
+          &quot;rating&quot;: item.rating,
+        });
+      }catch(e){
+      }
+      }
+      }
+
+  </pre>
+  </div>
+  </div>
+
+  <p>na pasta repository crie&nbsp;items_repository.dart</p>
+
+  <div id="imagens">
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  class ItemsRepository implements IItems{
+    ItemsRepository(this.firestore );
+    final FirebaseFirestore firestore;
+
+    final ItemsProvider _provider=ItemsProvider(firestore: FirebaseFirestore.instance);
+
+    @override
+    Future&lt;ItemModel&gt; createItem(ItemModel data) {
+
+      // TODO: implement createItem
+      throw UnimplementedError();
+    }
+
+    @override
+    Future&lt;void&gt; deleteItem(String documentId) async {
+      _provider.deleteItem(documentId);
+    }
+
+
+
+    @override
+    Future&lt;ItemModel&gt; getItemById(String documentId) {
+      // TODO: implement getItemById
+      throw UnimplementedError();
+    }
+
+    @override
+    Future&lt;void&gt; updateData(String documentId, ItemModel item) {
+      return   _provider.updateData(documentId,item);
+    }
+
+    @override
+    Stream&lt;QuerySnapshot&gt; getIAllItems()async* {
+      yield* _provider.getIAllItems();
+
+    }
+  }</pre>
+  </div>
+  </div>
+
+  <p>Crie a interface&nbsp;iitems.dart</p>
+
+  <div id="imagens">
+  <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">
+  <pre>
+  abstract class IItems{
+    Stream&lt;QuerySnapshot&gt;getIAllItems();
+    Future&lt;ItemModel&gt; createItem(ItemModel data);
+    Future&lt;void&gt; deleteItem(String documentId);
+    Future&lt;ItemModel&gt; getItemById(String documentId);
+    Future &lt;void&gt; updateData(String documentId,ItemModel item);
+
+  }</pre>
+    </div>
+  </div>
+  <p>&nbsp;</p>
+
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
